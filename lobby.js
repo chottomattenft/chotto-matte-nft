@@ -1,5 +1,5 @@
 // contract address on Rinkeby:
-const rewardProgramAddress = '0x88B48F654c30e99bc2e4A1559b4Dcf1aD93FA656'
+const rewardProgramAddress = '0x2B212805bb3B20BB3f3c365B2a691C449dDa73fD'
 
 // add contract ABI:
 const rewardProgramABI =
