@@ -444,11 +444,11 @@ window.addEventListener("load", async () => {
           }
       	}
         else {
-          window.location.href = "http://opensea.io";
+          window.location.href = "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/55780944325655266004829337587449828757311480392430591774840070242288682401793";
         }
     }
 	else {
-      window.location.href = "http://opensea.io";
+      window.location.href = "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/55780944325655266004829337587449828757311480392430591774840070242288682401793";
     }
 })
 
