@@ -298,6 +298,8 @@ window.addEventListener("load", async () => {
 	const rewardProgramContract = new web3.eth.Contract(rewardProgramABI, rewardProgramAddress);
         rewardProgramContract.setProvider(window.ethereum);
         var nftOwnerBalance = await rewardProgramContract.methods.getNftBalanceOf(activeAddress).call();
+	 
+	      console.log(nftOwnerBalance);
 
     	if (nftOwnerBalance > 0) {
     	  const changeButton = document.getElementById('myButton1');
