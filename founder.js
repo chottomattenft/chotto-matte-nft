@@ -288,7 +288,7 @@ window.addEventListener("load", async () => {
       const web3 = new Web3(window.ethereum);
       await ethereum.request({
       method: 'wallet_switchEthereumChain',
-      params: [{ chainId: '0x1' }],
+      params: [{ chainId: '0x4' }],
       });
       await ethereum.request({ method: 'eth_requestAccounts'});
       const displayAddress = document.getElementById('mm-connect');
@@ -299,8 +299,8 @@ window.addEventListener("load", async () => {
 
       const rewardProgramContract = new web3.eth.Contract(rewardProgramABI, rewardProgramAddress);
       rewardProgramContract.setProvider(window.ethereum);
-      var nftOwner = await rewardProgramContract.methods.ownerOfNft().call();
-      var nftOwnerLowerCase = nftOwner.toLowerCase();
+      var nftOwnerBalance = await rewardProgramContract.methods.getNftBalanceOf(activeAddress).call();
+	   
       var activeAddressLowerCase = activeAddress.toLowerCase();
       var verifiedAdd = await rewardProgramContract.methods.verifiedAddress().call();
       var verifiedAddLowerCase = verifiedAdd.toLowerCase();	 
@@ -387,7 +387,7 @@ window.addEventListener("load", async () => {
              document.getElementById("redeem-perk9").style.pointerEvents = "none";
           } 
 
-      if (nftOwnerLowerCase === activeAddressLowerCase) {
+      if (nftOwnerBalance > 0) {
           if ((verifiedAddLowerCase !== activeAddressLowerCase) || (checkStatus == false)) {
             document.getElementById("founder-page-state2-container").style.display = "inherit";
             document.getElementById("founder-page-state1-container").style.display = "none";
