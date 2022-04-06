@@ -1,5 +1,5 @@
-// contract address on Rinkeby:
-const rewardProgramAddress = '0x2B212805bb3B20BB3f3c365B2a691C449dDa73fD'
+// contract address:
+const rewardProgramAddress = '0x24d4dFB96A7D7c86BC5Ddf7184B0611f503193c6'
 
 // add contract ABI:
 const rewardProgramABI =
@@ -286,7 +286,7 @@ window.addEventListener("load", async () => {
         const web3 = new Web3(window.ethereum);
 	await ethereum.request({
    	method: 'wallet_switchEthereumChain',
-   	params: [{ chainId: '0x4' }],
+   	params: [{ chainId: '0x1' }],
   	});
 	await ethereum.request({ method: 'eth_requestAccounts'});
 	const displayAddress = document.getElementById('mm-connect');
@@ -324,7 +324,7 @@ mmEnable.onclick = async () => {
         const web3 = new Web3(window.ethereum);
 	await ethereum.request({
    	method: 'wallet_switchEthereumChain',
-   	params: [{ chainId: '0x4' }],
+   	params: [{ chainId: '0x1' }],
   	});
         await ethereum.request({ method: 'eth_requestAccounts'});
 	const displayAddress = document.getElementById('mm-connect');
